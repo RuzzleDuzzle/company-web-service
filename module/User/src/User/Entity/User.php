@@ -9,7 +9,7 @@ use LosBase\Entity\AbstractEntity;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="client")
+ * @ORM\Table(name="users")
  */
 class User extends AbstractEntity implements ZfcUserInterface, IdentityInterface
 {

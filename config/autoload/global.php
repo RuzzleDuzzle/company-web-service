@@ -1,15 +1,4 @@
 <?php
-/**
- * Global Configuration Override
- *
- * You can use this file for overriding configuration values from modules, etc.
- * You would place values in here that are agnostic to the environment and not
- * sensitive to security.
- *
- * @NOTE: In practice, this file will typically be INCLUDED in your source
- * control, so do not include passwords or other sensitive information in this
- * file.
- */
 
 return array(
     'service_manager' => array(
@@ -18,6 +7,22 @@ return array(
         ),
     ),
     'doctrine' => array(
+        'driver' => array(
+            'my_annotation_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(
+                    __DIR__ . '/../../module/Application/src/Application/Entity',
+                    __DIR__ . '/../../module/Company/src/Company/Entity',
+                ),
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                    'Application\Entity' => 'my_annotation_driver',
+                    'Company\Entity' => 'my_annotation_driver',
+                ),
+            ),
+        ),
         'connection' => array(
             'orm_default' => array(
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
@@ -33,18 +38,8 @@ return array(
                 )
             ),
         ),
-        'entitymanager' => array(
-            'orm_default' => array(
-                'connection' => 'orm_default',
-                'configuration' => 'orm_default'
-            )
+        'fixture' => array(
+            __DIR__ . '/../../data/DoctrineORMModule/Fixtures',
         ),
-        'configuration' => array(
-            'orm_default' => array(
-                'query_cache' => 'apc',
-                'result_cache' => 'apc',
-                'metadata_cache' => 'apc'
-            )
-        )
     ),
 );

@@ -1,23 +1,11 @@
 <?php
-/**
- * Configuration file changed by LosBase
- * The previous configuration file is stored in application.config.old
- */
+
 return array(
     'modules' => array(
         'Application',
         'DoctrineModule',
         'DoctrineORMModule',
-        'ZfcBase',
-        'ZfcUser',
-        'ZfcRbac',
-        'ZfcUserDoctrineORM',
-        'AssetManager',
-        'LosBase',
-        'LosUi',
-        'LosLog',
-        'Client',
-        'User',
+        'Company',
     ),
     'module_listener_options' => array(
         'module_paths' => array(

@@ -4,14 +4,14 @@ namespace Company\Controller;
 
 use Zend\Mvc\Controller\AbstractRestfulController;
 
-class CompanyRestController extends AbstractRestfulController
+class CompanyController extends AbstractRestfulController
 {
-    public function get($id)
+    public function getList()
     {
 
     }
 
-    public function getList()
+    public function get($id)
     {
 
     }

@@ -3,8 +3,7 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Company\Controller\CompanyClientController' => 'Company\Controller\CompanyClientController',
-            'Company\Controller\CompanyRestController' => 'Company\Controller\CompanyRestController',
+            'Company\Controller\CompanyController' => 'Company\Controller\CompanyController',
         ),
     ),
     'router' => array(
@@ -32,6 +31,27 @@ return array(
                             ),
                         ),
                     ),
+                ),
+            ),
+        ),
+    ),
+    'view_manager' => array(
+        'template_path_stack' => array(
+            'Company' => __DIR__.'/../view',
+        ),
+    ),
+    'doctrine' => array(
+        'driver' => array(
+            'Company_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(
+                    __DIR__.'/../src/Company/Entity',
+                ),
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                    'Company\Entity' => 'Company_driver',
                 ),
             ),
         ),
