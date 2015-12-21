@@ -1,6 +1,6 @@
 <?php
 
-namespace Company\Controller;
+namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractRestfulController;
 

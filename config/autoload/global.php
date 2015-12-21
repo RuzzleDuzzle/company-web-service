@@ -2,8 +2,12 @@
 
 return array(
     'service_manager' => array(
+        'aliases' => array(
+            'em' => 'Doctrine\ORM\EntityManager',
+        ),
         'factories' => array(
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+            'cache' => 'Zend\Cache\Service\StorageCacheFactory',
         ),
     ),
     'doctrine' => array(
