@@ -15,7 +15,7 @@ class CompanyService
         return $this;
     }
 
-    public function getList()
+    public function fetchAll()
     {
         $companyRepository = $this->em->getRepository('Application\Entity\Company');
         $companyList = $companyRepository->findAll();
@@ -26,6 +26,10 @@ class CompanyService
     {
         //TODO: Will need some checks whether entity was found or not.
         $company = $this->em->find('Application\Entity\Company', $id);
+        if (!$company) {
+            return \Exception(sprintf('Company with id %d was not found', $id));
+        }
+
         return $company;
     }
 
