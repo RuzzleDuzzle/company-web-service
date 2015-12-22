@@ -1,0 +1,14 @@
+*.properties
+build.xml
+*composer.json
+composer.lock
+.git
+.gitignore
+nbproject
+config/autoload/*local*
+rsync.ignore
+data/config/*
+data/DoctrineORMModule/Fixtures
+data/DoctrineORMModule/Migrations
+data/DoctrineORMModule/Proxy/*
+etc

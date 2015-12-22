@@ -1,9 +1,8 @@
 <?php
 
-namespace Company\Entity;
+namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Application\Entity\BaseEntity;
 
 /**
  * @ORM\Entity

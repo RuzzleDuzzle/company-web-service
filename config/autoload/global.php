@@ -17,7 +17,6 @@ return array(
                 'cache' => 'array',
                 'paths' => array(
                     __DIR__ . '/../../module/Application/src/Application/Entity',
-                    __DIR__ . '/../../module/Company/src/Company/Entity',
                 ),
             ),
             'orm_default' => array(
