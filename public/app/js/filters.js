@@ -1,3 +1,10 @@
-/**
- * Created by ruzzle on 22.12.15.
- */
+'use strict';
+
+/* Filters */
+
+angular.module('myApp.filters', []).
+filter('interpolate', ['version', function(version) {
+  return function(text) {
+    return String(text).replace(/\%VERSION\%/mg, version);
+  }
+}]);

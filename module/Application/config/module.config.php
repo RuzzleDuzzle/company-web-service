@@ -12,57 +12,57 @@ namespace Application;
 return array(
     'router' => array(
         'routes' => array(
-            'home' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
-                        'controller' => 'Application\Controller\Index',
-                        'action' => 'index',
-                    ),
-                ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                    'default' => array(
-                        'type' => 'Segment',
-                        'options' => array(
-                            'route' => '/[:controller[/:action]]',
-                            'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
-                            'defaults' => array(),
-                        ),
-                    ),
-                ),
-            ),
-            'application' => [
-                'type' => 'Literal',
-                'options' => [
-                    'route' => '/application',
-                    'defaults' => [
-                        '__NAMESPACE__' => 'Application\Controller',
-                        'controller' => 'Index',
-                        'action' => 'index',
-                    ],
-                ],
-                'may_terminate' => true,
-                'child_routes' => [
-                    'default' => [
-                        'type' => 'Segment',
-                        'options' => [
-                            'route' => '/[:controller[/:action]]',
-                            'constraints' => [
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ],
-                            'defaults' => [
-                            ],
-                        ],
-                    ],
-                ],
-            ],
+//            'home' => array(
+//                'type' => 'Literal',
+//                'options' => array(
+//                    'route' => '/',
+//                    'defaults' => array(
+//                        '__NAMESPACE__' => 'Application\Controller',
+//                        'controller' => 'Application\Controller\Index',
+//                        'action' => 'index',
+//                    ),
+//                ),
+//                'may_terminate' => true,
+//                'child_routes' => array(
+//                    'default' => array(
+//                        'type' => 'Segment',
+//                        'options' => array(
+//                            'route' => '/[:controller[/:action]]',
+//                            'constraints' => array(
+//                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                            ),
+//                            'defaults' => array(),
+//                        ),
+//                    ),
+//                ),
+//            ),
+//            'application' => [
+//                'type' => 'Literal',
+//                'options' => [
+//                    'route' => '/application',
+//                    'defaults' => [
+//                        '__NAMESPACE__' => 'Application\Controller',
+//                        'controller' => 'Index',
+//                        'action' => 'index',
+//                    ],
+//                ],
+//                'may_terminate' => true,
+//                'child_routes' => [
+//                    'default' => [
+//                        'type' => 'Segment',
+//                        'options' => [
+//                            'route' => '/[:controller[/:action]]',
+//                            'constraints' => [
+//                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                            ],
+//                            'defaults' => [
+//                            ],
+//                        ],
+//                    ],
+//                ],
+//            ],
             'companies' => array(
                 'type' => 'Literal',
                 'options' => array(

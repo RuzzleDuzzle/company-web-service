@@ -20,12 +20,12 @@
             <td><a href="#/companies/{{company.id}}">{{company.name}}</a></td>
             <td>{{company.address}}</td>
             <td>{{company.city}}</td>
-            <td>{{company.country.name}}</td>
+            <!--<td>{{company.country.name}}</td>-->
             <td>{{company.email}}</td>
             <td>{{company.phone}}</td>
-            <td>
-                <span ng-repeat="owner in company.owners">{{owner.name}}</span>
-            </td>
+            <!--<td>-->
+                <!--<span ng-repeat="owner in company.owners">{{owner.name}}</span>-->
+            <!--</td>-->
             <td>
                 <a ng-click="editCompany($index)"><i class="icon-pencil"></i></a>&nbsp;
                 <a ng-click="delCompany($index)"><i class="icon-remove-circle"></i></a>

@@ -1,0 +1,22 @@
+{
+  "name": "test-web-service",
+  "homepage": "https://github.com/RuzzleDuzzle/test-web-service",
+  "authors": [
+    "RuzzleDuzzle <ruzzleduzzle18@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.8",
+    "angular-ui-router": "~0.2.15"
+  }
+}

@@ -2,7 +2,7 @@
 
 namespace Application\Service;
 
-use Company\Entity\Company;
+use Application\Entity\Company;
 use Doctrine\ORM\EntityManager;
 
 class CompanyService
