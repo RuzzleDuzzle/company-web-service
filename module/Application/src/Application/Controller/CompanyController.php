@@ -30,7 +30,8 @@ class CompanyController extends AbstractRestfulController
 
     public function create($data)
     {
-
+        $service = $this->getCompanyService();
+        $company = $service->createCompany($data);
     }
 
     public function update($id, $data)

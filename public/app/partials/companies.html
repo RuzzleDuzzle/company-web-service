@@ -1,0 +1,42 @@
+<div ng-controller="CompanyListController">
+    <h1 class="page-header">Companies</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th width="25px">#ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Owners</th>
+            <th width="50px"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="company in companies">
+            <td>{{company.id}}</td>
+            <td><a href="#/companies/{{company.id}}">{{company.name}}</a></td>
+            <td>{{company.address}}</td>
+            <td>{{company.city}}</td>
+            <td>{{company.country.name}}</td>
+            <td>{{company.email}}</td>
+            <td>{{company.phone}}</td>
+            <td>
+                <span ng-repeat="owner in company.owners">{{owner.name}}</span>
+            </td>
+            <td>
+                <a ng-click="editCompany($index)"><i class="icon-pencil"></i></a>&nbsp;
+                <a ng-click="delCompany($index)"><i class="icon-remove-circle"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <button type="button" class="btn btn-success"
+                ng-click="addCompany()">
+            <b class="icon-plus-sign"></b>Add Album
+        </button>
+    </p>
+</div>
