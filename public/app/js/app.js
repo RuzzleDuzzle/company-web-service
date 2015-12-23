@@ -5,17 +5,17 @@
     httpHeaders,
   //the message to be shown to the user
     message,
-    as = angular.module('myApp', ['ngRoute', 'myApp.filters', 'myApp.services', 'myApp.controllers']);
+    as = angular.module('myApp', ['ngRoute', 'myApp.controllers']);
 
   as.value('version', '1.4.8');
 
   as.config(function ($routeProvider, $locationProvider, $httpProvider) {
 
     $routeProvider
-      .when('/companies', {templateUrl: 'partials/companies.html', controller: 'CompanyListController'})
-      .when('/new', {templateUrl: 'partials/new.html', controller: 'NewCompanyController'})
-      .when('/edit/:id', {templateUrl: 'partials/edit.html', controller: 'EditCompanyController'})
-      .when('/company/:id', {templateUrl: 'partials/company.html', controller: 'CompanyController'})
+      .when('/companies', {templateUrl: 'partials/companies.html'})
+      .when('/new', {templateUrl: 'partials/new.html'})
+      .when('/edit/:id', {templateUrl: 'partials/edit.html'})
+      .when('/company/:id', {templateUrl: 'partials/company.html'})
       .otherwise({redirectTo: '/'});
     //$httpProvider.defaults.useXDomain = true;
     //delete $httpProvider.defaults.headers.common["X-Requested-With"];

@@ -50,19 +50,12 @@ class Company extends BaseEntity
 
     /**
      * @ORM\OneToOne(targetEntity="Owner", mappedBy="company", cascade={"persist"})
+     * @ORM\JoinColumn(name="ownerId", referencedColumnName="id", nullable=true)
      */
     protected $owner;
 
-    public function __construct($data = null)
-    {
-        parent::__construct($data);
-        $this->owners = new ArrayCollection;
-    }
-
     public function setOwner(Owner $owner)
     {
-        $owner->setCompany($this);
         $this->owner = $owner;
-        return $this;
     }
 }

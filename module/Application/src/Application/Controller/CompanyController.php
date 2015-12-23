@@ -25,16 +25,7 @@ class CompanyController extends AbstractRestfulController
     {
         $service = $this->getCompanyService();
         $company = $service->getCompany($id);
-        $countries = $service->getCountryList();
-        $countryList = [];
-        foreach ($countries as $country) {
-            array_push($countryList, $country->getArrayCopy());
-        }
-
-        return new JsonModel(array('data' => array(
-            'company' => $company->getArrayCopy(),
-            'countries' => $countryList
-        )));
+        return new JsonModel(array('data' => $company->getArrayCopy()));
     }
 
     public function create($data)

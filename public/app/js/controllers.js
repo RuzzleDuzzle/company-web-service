@@ -18,7 +18,7 @@
       console.log('call load()...');
       $http.get($rootScope.appUrl + '/companies')
         .success(function (data, status, headers, config) {
-          $scope.companies = data;
+          $scope.companies = data.data;
           console.log($scope.companies);
           angular.copy($scope.companies, $scope.copy);
         });
@@ -74,8 +74,7 @@
       console.log('call load()...');
       $http.get($rootScope.appUrl + '/companies/' + $routeParams['id'])
         .success(function (data, status, headers, config) {
-          $scope.company = data.company;
-          $scope.countries = data.countries;
+          $scope.company = data.data;
           angular.copy($scope.company, $scope.copy);
         });
     };
@@ -97,15 +96,15 @@
       $location.path('/companies');
     };
 
-    $scope.addOwner = function() {
-      var newItemNo = $scope.company.owners.length+1;
-      $scope.company.owners.push({'id': null, 'name': '', countryId: $scope.company.id});
-    };
-
-    $scope.removeOwner = function() {
-      var lastItem = $scope.company.owners.length-1;
-      $scope.company.owners.splice(lastItem);
-    };
+    //$scope.addOwner = function() {
+    //  var newItemNo = $scope.company.owners.length+1;
+    //  $scope.company.owners.push({'id': null, 'name': '', countryId: $scope.company.id});
+    //};
+    //
+    //$scope.removeOwner = function() {
+    //  var lastItem = $scope.company.owners.length-1;
+    //  $scope.company.owners.splice(lastItem);
+    //};
   });
 
   as.controller('CompanyController', function ($scope, $rootScope, $http, $routeParams, $location) {
@@ -115,7 +114,7 @@
       console.log('call load()...');
       $http.get($rootScope.appUrl + '/companies/' + $routeParams['id'])
         .success(function (data, status, headers, config) {
-          $scope.company = data;
+          $scope.company = data.data;
           angular.copy($scope.company, $scope.copy);
         });
     };

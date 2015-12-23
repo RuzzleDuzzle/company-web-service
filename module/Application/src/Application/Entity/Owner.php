@@ -28,11 +28,6 @@ class Owner extends BaseEntity
      */
     protected $company;
 
-    public function getCompany()
-    {
-        return $this->company;
-    }
-
     public function setCompany(Company $company)
     {
         $this->company = $company;

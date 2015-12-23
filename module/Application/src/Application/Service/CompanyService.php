@@ -39,6 +39,9 @@ class CompanyService
             return \Exception('data array cannot be empty');
         }
 
+        if (isset($data['owner'])) {
+
+        }
         //TODO: remember about dependencies and set Country! Exchange array might not work in this case.
         $company = new Company($data);
         $this->em->persist($company);
@@ -67,12 +70,5 @@ class CompanyService
         $company = $this->getCompany($id);
         $this->em->remove($company);
         $this->em->flush();
-    }
-
-    public function getCountryList()
-    {
-        $countryRep = $this->em->getRepository('Application\Entity\Country');
-        $countries = $countryRep->findAll();
-        return $countries;
     }
 }

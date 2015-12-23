@@ -29,7 +29,6 @@
                            ng-model="company.email">
                 </div>
             </div>
-
             <div class="control-group">
                 <label class="control-label" for="phone">Phone number</label>
                 <div class="controls">
@@ -37,11 +36,15 @@
                            ng-model="company.phone">
                 </div>
             </div>
+            <div class="control-group">
+                <label class="control-label" for="owner">Owner</label>
+                <div class="controls">
+                    <input id="owner" type="text" class="input-block-level"
+                           ng-model="company.owner.name">
+                    <input hidden ng-model="company.owner.id">
+                </div>
+            </div>
         <button ng-click="updateCompany()" type="submit" class="btn btn-primary" style="margin-top: 10px">Update Company</button>
         <button ng-click="cancelEdit()" type="cancel" class="btn btn-default" style="margin-top: 10px">Cancel</button>
     </form>
 </div>
-
-
-<input type="text" ng-model="choice.name" name="" placeholder="Enter mobile number">
-<button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>
