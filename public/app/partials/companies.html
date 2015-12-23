@@ -7,17 +7,17 @@
             <th>Name</th>
             <th>Address</th>
             <th>City</th>
-            <th>Country</th>
+            <!--<th>Country</th>-->
             <th>Email</th>
             <th>Phone Number</th>
-            <th>Owners</th>
-            <th width="50px"></th>
+            <!--<th>Owners</th>-->
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="company in companies">
             <td>{{company.id}}</td>
-            <td><a href="#/companies/{{company.id}}">{{company.name}}</a></td>
+            <td><a href="#/company/{{company.id}}">{{company.name}}</a></td>
             <td>{{company.address}}</td>
             <td>{{company.city}}</td>
             <!--<td>{{company.country.name}}</td>-->
@@ -27,8 +27,8 @@
                 <!--<span ng-repeat="owner in company.owners">{{owner.name}}</span>-->
             <!--</td>-->
             <td>
-                <a ng-click="editCompany($index)"><i class="icon-pencil"></i></a>&nbsp;
-                <a ng-click="delCompany($index)"><i class="icon-remove-circle"></i></a>
+                <a ng-click="editCompany($index)"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
+                <a ng-click="delCompany($index)"><i class="glyphicon glyphicon-ban-circle"></i></a>
             </td>
         </tr>
         </tbody>
@@ -36,7 +36,7 @@
     <p>
         <button type="button" class="btn btn-success"
                 ng-click="addCompany()">
-            <b class="icon-plus-sign"></b>Add Album
+            <b class="icon-plus-sign"></b>Add Company
         </button>
     </p>
 </div>

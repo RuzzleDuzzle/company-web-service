@@ -45,4 +45,7 @@ return array(
             __DIR__ . '/../../data/DoctrineORMModule/Fixtures',
         ),
     ),
+    'data-fixture' => array(
+        __DIR__ . '/../../data/DoctrineORMModule/Fixtures',
+    ),
 );

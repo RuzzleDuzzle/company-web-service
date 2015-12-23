@@ -68,4 +68,11 @@ class CompanyService
         $this->em->remove($company);
         $this->em->flush();
     }
+
+    public function getCountryList()
+    {
+        $countryRep = $this->em->getRepository('Application\Entity\Country');
+        $countries = $countryRep->findAll();
+        return $countries;
+    }
 }

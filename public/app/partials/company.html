@@ -1,29 +1,25 @@
 <div ng-controller="CompanyController">
-    <div class="row-fluid">
-        <div class="span3">
-            <img src="../../app/img/holder.png" width="128" height="128">
-        </div>
-        <span class="span9">
-            <h2>{{company.name}}</h2>
-            <p>{{album.songs.length}} SONGS, <span ng-repeat="u in album.artists">{{u.name}}</span></p>
-        </span>
-    </div>
+    <h2>{{company.name}}</h2>
     <table class="table">
         <tr>
             <td>Address</td>
-            <td>{{e.duration}}</td>
+            <td>{{company.address}}</td>
         </tr>
         <tr>
             <td>City</td>
-            <td>{{e.duration}}</td>
+            <td>{{company.city}}</td>
         </tr>
         <tr>
             <td>Country</td>
-            <td>{{e.duration}}</td>
+            <td>{{company.country}}</td>
         </tr>
         <tr>
             <td>E-mail</td>
-            <td>{{e.duration}}</td>
+            <td>{{company.email}}</td>
+        </tr>
+        <tr>
+            <td>Phone number</td>
+            <td>{{company.phone}}</td>
         </tr>
         <tr>
             <td>Owners</td>
@@ -32,7 +28,7 @@
     </table>
 
     <p>
-        <a href="#/albums" class="btn btn-success">
+        <a href="#/companies" class="btn btn-success">
             <b class="icon-home"></b>Back to Album List
         </a>
     </p>

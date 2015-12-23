@@ -1,24 +1,47 @@
-<div ng-controller="EditAlbumCtrl">
-    <form class="form-horizontal">
-        <h1 class="page-header">Edit Album({{album.id}})</h1>
-        <fieldset>
+<div ng-controller="EditCompanyController">
+    <h1 class="page-header">Edit Company</h1>
+    <form class="form-horizontal" on-submit="void">
             <div class="control-group">
-                <label class="control-label" for="title">Title</label>
+                <label class="control-label" for="name">Company name</label>
                 <div class="controls">
-                    <input id="title" type="text" class="input-block-level"
-                           required="true" ng-model="album.title"></input>
+                    <input id="name" type="text" class="input-block-level"
+                           required="true" ng-model="company.name">
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="artist">Artist</label>
+                <label class="control-label" for="address">Address</label>
                 <div class="controls">
-                    <input id="artist" type="text" class="input-block-level" 
-                           ng-model="album.artist" required="true"></input>
+                    <input id="address" type="text" class="input-block-level"
+                            ng-model="company.address">
                 </div>
             </div>
-        </fieldset>
-        <div class="form-actions">			
-            <button ng-click="updateAlbum()" class="btn btn-primary">Update Album</button>
-        </div>
+            <div class="control-group">
+                <label class="control-label" for="city">City</label>
+                <div class="controls">
+                    <input id="city" type="text" class="input-block-level"
+                           ng-model="company.city">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="email">E-mail</label>
+                <div class="controls">
+                    <input id="email" type="text" class="input-block-level"
+                           ng-model="company.email">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="phone">Phone number</label>
+                <div class="controls">
+                    <input id="phone" type="text" class="input-block-level"
+                           ng-model="company.phone">
+                </div>
+            </div>
+        <button ng-click="updateCompany()" type="submit" class="btn btn-primary" style="margin-top: 10px">Update Company</button>
+        <button ng-click="cancelEdit()" type="cancel" class="btn btn-default" style="margin-top: 10px">Cancel</button>
     </form>
 </div>
+
+
+<input type="text" ng-model="choice.name" name="" placeholder="Enter mobile number">
+<button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>

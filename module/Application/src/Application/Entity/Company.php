@@ -24,18 +24,17 @@ class Company extends BaseEntity
     protected $name;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      */
     protected $address;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=100)
      */
     protected $city;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country")
-     * @ORM\JoinColumn(name="countryId", referencedColumnName="id", nullable=true)
+     * @ORM\Column(type="string", length=100)
      */
     protected $country;
 
@@ -60,15 +59,10 @@ class Company extends BaseEntity
         $this->owners = new ArrayCollection;
     }
 
-
-    public function getCountry()
+    public function addOwner(Owner $owner)
     {
-        return $this->country;
-    }
-
-    public function setCountry(Country $country = null)
-    {
-        $this->country = $country;
+        $owner->setCompany($this);
+        $this->owner->add($owner);
         return $this;
     }
 }
