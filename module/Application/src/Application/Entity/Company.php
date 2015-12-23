@@ -49,9 +49,9 @@ class Company extends BaseEntity
     protected $phone;
 
     /**
-     * @ORM\OneToMany(targetEntity="Owner", mappedBy="company", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Owner", mappedBy="company", cascade={"persist"})
      */
-    protected $owners;
+    protected $owner;
 
     public function __construct($data = null)
     {
@@ -59,10 +59,10 @@ class Company extends BaseEntity
         $this->owners = new ArrayCollection;
     }
 
-    public function addOwner(Owner $owner)
+    public function setOwner(Owner $owner)
     {
         $owner->setCompany($this);
-        $this->owner->add($owner);
+        $this->owner = $owner;
         return $this;
     }
 }

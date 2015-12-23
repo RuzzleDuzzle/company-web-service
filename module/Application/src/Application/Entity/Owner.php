@@ -23,7 +23,7 @@ class Owner extends BaseEntity
     protected $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Company", inversedBy="owners", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Company", inversedBy="owner", cascade={"persist"})
      * @ORM\JoinColumn(name="companyId", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $company;
