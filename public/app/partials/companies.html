@@ -7,10 +7,10 @@
             <th>Name</th>
             <th>Address</th>
             <th>City</th>
-            <!--<th>Country</th>-->
+            <th>Country</th>
             <th>Email</th>
             <th>Phone Number</th>
-            <!--<th>Owners</th>-->
+            <th>Owner</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -20,12 +20,12 @@
             <td><a href="#/company/{{company.id}}">{{company.name}}</a></td>
             <td>{{company.address}}</td>
             <td>{{company.city}}</td>
-            <!--<td>{{company.country.name}}</td>-->
+            <td>{{company.country}}</td>
             <td>{{company.email}}</td>
             <td>{{company.phone}}</td>
-            <!--<td>-->
-                <!--<span ng-repeat="owner in company.owners">{{owner.name}}</span>-->
-            <!--</td>-->
+            <td>
+                <span>{{company.owner.name}}</span>
+            </td>
             <td>
                 <a ng-click="editCompany($index)"><i class="glyphicon glyphicon-pencil"></i></a>&nbsp;
                 <a ng-click="delCompany($index)"><i class="glyphicon glyphicon-ban-circle"></i></a>

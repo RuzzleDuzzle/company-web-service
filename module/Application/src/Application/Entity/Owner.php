@@ -18,13 +18,13 @@ class Owner extends BaseEntity
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=false)
      */
     protected $name;
 
     /**
      * @ORM\OneToOne(targetEntity="Company", inversedBy="owner", cascade={"persist"})
-     * @ORM\JoinColumn(name="companyId", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     * @ORM\JoinColumn(name="companyId", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $company;
 

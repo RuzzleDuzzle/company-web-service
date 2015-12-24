@@ -3,7 +3,6 @@
 namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -50,7 +49,7 @@ class Company extends BaseEntity
 
     /**
      * @ORM\OneToOne(targetEntity="Owner", mappedBy="company", cascade={"persist"})
-     * @ORM\JoinColumn(name="ownerId", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="ownerId", referencedColumnName="id")
      */
     protected $owner;
 

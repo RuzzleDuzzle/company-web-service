@@ -50,10 +50,14 @@
   });
 
   as.controller('NewCompanyController', function ($scope, $rootScope, $http, $location) {
-
     $scope.company = {};
     $scope.saveCompany = function () {
-      console.log('call saveAlbum');
+
+      if ($scope.newCompanyForm.$invalid) {
+        console.log('our form is invalid');
+        return;
+      }
+
       $http.post($rootScope.appUrl + '/companies', $scope.company)
         .success(function (data, status, headers, config) {
           console.log('success...');
@@ -62,9 +66,11 @@
         .error(function (data, status, headers, config) {
           console.log('error...');
         });
-    }
+    };
 
-
+    $scope.cancel = function () {
+      $location.path('/companies');
+    };
   });
 
   as.controller('EditCompanyController', function ($scope, $rootScope, $http, $routeParams, $location) {
@@ -95,16 +101,6 @@
     $scope.cancelEdit = function () {
       $location.path('/companies');
     };
-
-    //$scope.addOwner = function() {
-    //  var newItemNo = $scope.company.owners.length+1;
-    //  $scope.company.owners.push({'id': null, 'name': '', countryId: $scope.company.id});
-    //};
-    //
-    //$scope.removeOwner = function() {
-    //  var lastItem = $scope.company.owners.length-1;
-    //  $scope.company.owners.splice(lastItem);
-    //};
   });
 
   as.controller('CompanyController', function ($scope, $rootScope, $http, $routeParams, $location) {

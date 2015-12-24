@@ -15,6 +15,13 @@ abstract class BaseEntity extends AbstractEntity
     /** @ORM\Column(type="integer", nullable=true) */
     protected $tsMod;
 
+    public function __construct($data)
+    {
+        parent::__construct($data);
+        $this->setTsAdd(time());
+        $this->setTsMod(time());
+    }
+
     public function setTsAdd($tsAdd = null)
     {
         if (null === $tsAdd) {

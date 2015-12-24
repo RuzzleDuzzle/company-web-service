@@ -13,19 +13,26 @@ class CompanyController extends AbstractRestfulController
     {
         $service = $this->getCompanyService();
         $companies = $service->fetchAll();
-        $company_return = [];
-        foreach ($companies as $company) {
-            array_push($company_return, $company->getArrayCopy());
-        }
+//        $company_return = [];
+//        foreach ($companies as $company) {
+//            $owner = $company->getOwner();
+//            if ($owner) { $owner = $owner->getArrayCopy(); }
+//            $companyArray = $company->getArrayCopy();
+//            $companyArray['owner'] = $owner;
+//            array_push($company_return, $companyArray);
+//        }
 
-        return new JsonModel(array('data' => $company_return));
+        return new JsonModel(array('data' => $companies));
     }
 
     public function get($id)
     {
         $service = $this->getCompanyService();
         $company = $service->getCompany($id);
-        return new JsonModel(array('data' => $company->getArrayCopy()));
+        $owner = $company->getOwner()->getArrayCopy();
+        $companyArray = $company->getArrayCopy();
+        $companyArray['owner'] = $owner;
+        return new JsonModel(array('data' => $companyArray));
     }
 
     public function create($data)
@@ -39,7 +46,10 @@ class CompanyController extends AbstractRestfulController
     {
         $service = $this->getCompanyService();
         $company = $service->updateCompany($id, $data);
-        return new JsonModel(array('data' => $company));
+        $owner = $company->getOwner()->getArrayCopy();
+        $companyArray = $company->getArrayCopy();
+        $companyArray['owner'] = $owner;
+        return new JsonModel(array('data' => $companyArray));
     }
 
     public function delete($id)
@@ -47,11 +57,6 @@ class CompanyController extends AbstractRestfulController
         $service = $this->getCompanyService();
         $service->deleteCompany($id);
         return new JsonModel(array('data' > 'deleted'));
-    }
-
-    public function getResponseWithHeader()
-    {
-
     }
 
     private function getCompanyService()

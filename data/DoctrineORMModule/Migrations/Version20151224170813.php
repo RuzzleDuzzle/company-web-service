@@ -8,7 +8,7 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20151224001809 extends AbstractMigration
+class Version20151224170813 extends AbstractMigration
 {
     /**
      * @param Schema $schema
@@ -18,7 +18,7 @@ class Version20151224001809 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE companies ADD ownerId INT NOT NULL');
+        $this->addSql('ALTER TABLE companies ADD ownerId INT DEFAULT NULL');
         $this->addSql('ALTER TABLE companies ADD CONSTRAINT FK_8244AA3AE05EFD25 FOREIGN KEY (ownerId) REFERENCES owners (id)');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_8244AA3AE05EFD25 ON companies (ownerId)');
     }
