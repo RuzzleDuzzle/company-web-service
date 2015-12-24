@@ -1,53 +1,53 @@
 <div style="width: 30%">
     <h1 class="page-header">Edit Company</h1>
-    <form name="newCompanyForm" novalidate ng-controller="EditCompanyController" ng-submit="updateCompany()">
+    <form name="editCompanyForm" novalidate ng-controller="EditCompanyController" ng-submit="updateCompany()">
         <div class="form-group"
-             ng-class="{'has-error': submitted && newCompanyForm.name.$invalid}">
+             ng-class="{'has-error': submitted && editCompanyForm.name.$invalid}">
             <input id="name" name="name" type="text" class="form-control"
                    placeholder="Company name" required ng-model="company.name">
             <span class="help-block"
-                  ng-show="submitted && newCompanyForm.name.$error.required">Required</span>
+                  ng-show="submitted && editCompanyForm.name.$error.required">Required</span>
         </div>
         <div class="form-group"
-             ng-class="{'has-error': submitted && newCompanyForm.address.$invalid}">
+             ng-class="{'has-error': submitted && editCompanyForm.address.$invalid}">
             <input id="address" name="address" type="text" class="form-control"
                    placeholder="Address" required ng-model="company.address">
             <span class="help-block"
-                  ng-show="submitted && newCompanyForm.address.$error.required">Required</span>
+                  ng-show="submitted && editCompanyForm.address.$error.required">Required</span>
         </div>
         <div class="form-group"
-             ng-class="{'has-error': submitted && newCompanyForm.city.$invalid}">
+             ng-class="{'has-error': submitted && editCompanyForm.city.$invalid}">
             <input id="city" name="city" type="text" class="form-control"
                    placeholder="City" required ng-model="company.city">
             <span class="help-block"
-                  ng-show="submitted && newCompanyForm.city.$error.required">Required</span>
+                  ng-show="submitted && editCompanyForm.city.$error.required">Required</span>
         </div>
         <div class="form-group"
-             ng-class="{'has-error': submitted && newCompanyForm.country.$invalid}">
+             ng-class="{'has-error': submitted && editCompanyForm.country.$invalid}">
             <input id="country" name="country" type="text" class="form-control"
                    placeholder="Country" required ng-model="company.country">
             <span class="help-block"
-                  ng-show="submitted && newCompanyForm.country.$error.required">Required</span>
+                  ng-show="submitted && editCompanyForm.country.$error.required">Required</span>
         </div>
         <div class="form-group"
-             ng-class="{'has-error': submitted && newCompanyForm.email.$invalid}">
+             ng-class="{'has-error': submitted && editCompanyForm.email.$invalid}">
             <input id="email" class="form-control" name="email" type="email"
                    placeholder="E-mail" ng-email ng-model="company.email"/>
        <span class="help-block"
-             ng-show="submitted && newCompanyForm.email.$error.required">Required</span>
+             ng-show="submitted && editCompanyForm.email.$error.required">Required</span>
             <span class="help-block"
-                  ng-show="submitted && newCompanyForm.email.$error.email">Enter valid e-mail address</span>
+                  ng-show="submitted && editCompanyForm.email.$error.email">Enter valid e-mail address</span>
         </div>
         <div class="form-group">
             <input id="phone" name="phone" type="text" class="form-control"
                    placeholder="Phone number" ng-model="company.phone">
         </div>
         <div class="form-group"
-             ng-class="{'has-error': submitted && newCompanyForm.owner.$invalid}">
+             ng-class="{'has-error': submitted && editCompanyForm.owner.$invalid}">
             <input id="owner" name="owner" type="text" class="form-control"
                    placeholder="Owner" required ng-model="company.owner.name">
             <span class="help-block"
-                  ng-show="submitted && newCompanyForm.owner.$error.required">Required</span>
+                  ng-show="submitted && editCompanyForm.owner.$error.required">Required</span>
         </div>
         <button type="submit" class="btn btn-primary"
                 ng-click="submitted=true" style="margin-top: 10px; margin-right: 10px">Update Company
