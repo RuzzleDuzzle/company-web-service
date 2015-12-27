@@ -90,6 +90,11 @@
     $scope.updateCompany = function () {
       console.log('call updateAlbum');
 
+      if ($scope.editCompanyForm.$invalid) {
+        console.log('our form is invalid');
+        return;
+      }
+
       $http.put($rootScope.appUrl + '/companies/' + $scope.company.id, $scope.company)
         .success(function (data, status, headers, config) {
           $location.path('/companies');

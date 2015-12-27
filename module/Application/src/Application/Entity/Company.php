@@ -49,7 +49,6 @@ class Company extends BaseEntity
 
     /**
      * @ORM\OneToOne(targetEntity="Owner", mappedBy="company", cascade={"persist"})
-     * @ORM\JoinColumn(name="ownerId", referencedColumnName="id")
      */
     protected $owner;
 

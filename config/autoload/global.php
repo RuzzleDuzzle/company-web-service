@@ -30,16 +30,29 @@ return array(
             'orm_default' => array(
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
                 'params' => array(
-                    'host' => 'localhost',
-                    'port' => '3306',
-                    'user' => 'root',
-                    'dbname' => 'company_web_service',
+                    'host' => $_SERVER['RDS_HOSTNAME'],
+                    'port' => $_SERVER['RDS_PORT'],
+                    'user' => $_SERVER['RDS_USERNAME'],
+                    'password' => $_SERVER['RDS_PASSWORD'],
+                    'dbname' => $_SERVER['RDS_DB_NAME'],
                     'charset' => 'UTF8',
                     'driverOptions' => array(
                         'charset' => 'UTF8'
                     )
                 )
             ),
+        ),
+        'cache' => array(
+            'class' => 'Doctrine\Common\Cache\ApcCache'
+        ),
+        'configuration' => array(
+            'orm_default' => array(
+                'metadata_cache' => 'apc',
+                'query_cache'    => 'apc',
+                'result_cache'   => 'apc',
+
+                'generate_proxies' => false,
+            )
         ),
         'fixture' => array(
             __DIR__ . '/../../data/DoctrineORMModule/Fixtures',
