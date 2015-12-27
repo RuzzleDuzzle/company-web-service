@@ -10,16 +10,16 @@
     };
 
     $rootScope.appUrl = "http://localhost";
+    $rootScope.serverUrl = "/companies/";
 
   });
 
   as.controller('CompanyListController', function ($scope, $rootScope, $http, $location) {
     var load = function () {
       console.log('call load()...');
-      $http.get($rootScope.appUrl + '/companies')
+      $http.get($rootScope.appUrl + $rootScope.serverUrl)
         .success(function (data, status, headers, config) {
           $scope.companies = data.data;
-          console.log($scope.companies);
           angular.copy($scope.companies, $scope.copy);
         });
     };
@@ -40,7 +40,7 @@
       console.log('call delAlbum');
       var todel = $scope.companies[index];
       $http
-        .delete($rootScope.appUrl + '/companies/' + todel.id)
+        .delete($rootScope.appUrl + $rootScope.serverUrl + todel.id)
         .success(function (data, status, headers, config) {
           load();
         }).error(function (data, status, headers, config) {
@@ -54,14 +54,14 @@
     $scope.saveCompany = function () {
 
       if ($scope.newCompanyForm.$invalid) {
-        console.log('our form is invalid');
+        console.log('Form is invalid');
         return;
       }
 
-      $http.post($rootScope.appUrl + '/companies', $scope.company)
+      $http.post($rootScope.appUrl + $rootScope.serverUrl, $scope.company)
         .success(function (data, status, headers, config) {
           console.log('success...');
-          $location.path('/companies');
+          $location.path($rootScope.serverUrl);
         })
         .error(function (data, status, headers, config) {
           console.log('error...');
@@ -69,7 +69,7 @@
     };
 
     $scope.cancel = function () {
-      $location.path('/companies');
+      $location.path($rootScope.serverUrl);
     };
   });
 
@@ -78,7 +78,7 @@
 
     var load = function () {
       console.log('call load()...');
-      $http.get($rootScope.appUrl + '/companies/' + $routeParams['id'])
+      $http.get($rootScope.appUrl + $rootScope.serverUrl + $routeParams['id'])
         .success(function (data, status, headers, config) {
           $scope.company = data.data;
           angular.copy($scope.company, $scope.copy);
@@ -91,20 +91,20 @@
       console.log('call updateAlbum');
 
       if ($scope.editCompanyForm.$invalid) {
-        console.log('our form is invalid');
+        console.log('Form is invalid');
         return;
       }
 
-      $http.put($rootScope.appUrl + '/companies/' + $scope.company.id, $scope.company)
+      $http.put($rootScope.appUrl + $rootScope.serverUrl + $scope.company.id, $scope.company)
         .success(function (data, status, headers, config) {
-          $location.path('/companies');
+          $location.path($rootScope.serverUrl);
         })
         .error(function (data, status, headers, config) {
         });
     };
 
     $scope.cancelEdit = function () {
-      $location.path('/companies');
+      $location.path($rootScope.serverUrl);
     };
   });
 
@@ -113,7 +113,7 @@
 
     var load = function () {
       console.log('call load()...');
-      $http.get($rootScope.appUrl + '/companies/' + $routeParams['id'])
+      $http.get($rootScope.appUrl + $rootScope.serverUrl + $routeParams['id'])
         .success(function (data, status, headers, config) {
           $scope.company = data.data;
           angular.copy($scope.company, $scope.copy);
