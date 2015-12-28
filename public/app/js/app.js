@@ -32,19 +32,4 @@
     envServiceProvider.check();
   });
 
-  //as.config(function($httpProvider) {
-  //  //$httpProvider.interceptors.push('xdebugInterceptor');
-  //  //$httpProvider.interceptors.push(function($q) {
-  //  //  return {
-  //  //    'request': function(config) {
-  //  //      return config || $q.when(config);
-  //  //    },
-  //  //    'response': function(response) {
-  //  //      return response || $q.when(response);
-  //  //    }
-  //  //  }
-  //  //});
-  //
-  //});
-
 }());
