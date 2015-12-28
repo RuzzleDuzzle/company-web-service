@@ -17,7 +17,7 @@
     envServiceProvider.config({
       domains: {
         development: ['localhost'],
-        production: ['//default-environment-5j4c7q5pw4.elasticbeanstalk.com']
+        production: ['default-environment-5j4c7q5pw4.elasticbeanstalk.com']
       },
       vars: {
         development: {
