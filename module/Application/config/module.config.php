@@ -67,15 +67,23 @@ return array(
         ),
     ),
     'view_manager' => array(
+        'display_not_found_reason' => true,
+        'display_exceptions' => true,
+        'doctype' => 'HTML5',
+        'not_found_template' => 'error/404',
+        'exception_template' => 'error/index',
+        'under_maintenance_template' => 'error/under-maintenance',
         'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'album/album/index' => __DIR__ . '/../view/album/album/index.phtml',
-            'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
+            'error/404' => __DIR__ . '/../view/error/404.phtml',
+            'error/403' => __DIR__ . '/../view/error/403.phtml',
+            'error/index' => __DIR__ . '/../view/error/index.phtml',
+            'error/under-maintenance' => __DIR__ . '/../view/error/under-maintenance.phtml',
         ),
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            __DIR__ . '/../view',
         ),
+        'layout' => 'layout/not-authorized',
         'strategies' => array(
             'ViewJsonStrategy',
         ),
