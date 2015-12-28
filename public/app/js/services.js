@@ -1,5 +1,5 @@
 (function () {
-  var as = angular.module('myApp.services', []);
+  var as = angular.module('myApp.services', ['environment']);
 
   as.factory('xdebugInterceptor', function($q) {
     return {

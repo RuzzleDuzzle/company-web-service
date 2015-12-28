@@ -18,6 +18,7 @@
   "dependencies": {
     "angular-route": "~1.4.8",
     "angular-ui-router": "~0.2.15",
-    "angular-resource": "~1.4.8"
+    "angular-resource": "~1.4.8",
+    "angular-environment": "~1.0.3"
   }
 }

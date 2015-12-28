@@ -13,6 +13,25 @@
       .otherwise({redirectTo: '/'});
   });
 
+  as.config(function(envServiceProvider) {
+    envServiceProvider.config({
+      domains: {
+        development: ['localhost'],
+        production: ['//default-environment-5j4c7q5pw4.elasticbeanstalk.com']
+      },
+      vars: {
+        development: {
+          apiUrl: '//localhost'
+        },
+        production: {
+          apiUrl: '//default-environment-5j4c7q5pw4.elasticbeanstalk.com'
+        }
+      }
+    });
+
+    envServiceProvider.check();
+  });
+
   //as.config(function($httpProvider) {
   //  //$httpProvider.interceptors.push('xdebugInterceptor');
   //  //$httpProvider.interceptors.push(function($q) {

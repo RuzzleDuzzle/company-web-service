@@ -1,6 +1,6 @@
 (function () {
   var as = angular.module('myApp.controllers', []);
-  as.controller('AppController', function ($scope, $rootScope, $http, $location) {
+  as.controller('AppController', function ($scope, envService, $rootScope, $http, $location) {
     $scope.activeWhen = function (value) {
       return value ? 'active' : '';
     };
@@ -9,7 +9,7 @@
       return $location.url();
     };
 
-    $rootScope.appUrl = "http://localhost";
+    $rootScope.appUrl = envService.read('apiUrl');
     $rootScope.serverUrl = "/companies/";
 
   });
