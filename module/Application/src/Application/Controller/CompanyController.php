@@ -13,15 +13,6 @@ class CompanyController extends AbstractRestfulController
     {
         $service = $this->getCompanyService();
         $companies = $service->fetchAll();
-//        $company_return = [];
-//        foreach ($companies as $company) {
-//            $owner = $company->getOwner();
-//            if ($owner) { $owner = $owner->getArrayCopy(); }
-//            $companyArray = $company->getArrayCopy();
-//            $companyArray['owner'] = $owner;
-//            array_push($company_return, $companyArray);
-//        }
-
         return new JsonModel(array('data' => $companies));
     }
 
