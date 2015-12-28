@@ -42,9 +42,6 @@ return array(
                 )
             ),
         ),
-        'cache' => array(
-            'class' => 'Doctrine\Common\Cache\ApcCache'
-        ),
         'configuration' => array(
             'orm_default' => array(
                 'metadata_cache' => 'apc',
