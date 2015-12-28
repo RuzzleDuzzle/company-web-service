@@ -36,7 +36,7 @@ return array(
         'config_cache_enabled' => ($env == 'production'),
 
         // The key used to create the configuration cache file name.
-        'config_cache_key' => 'levenues_app_config',
+        //'config_cache_key' => 'levenues_app_config',
 
         // Whether or not to enable a module class map cache.
         // If enabled, creates a module class map cache which will be used
@@ -44,7 +44,7 @@ return array(
         'module_map_cache_enabled' => ($env == 'production'),
 
         // The key used to create the class map cache file name.
-        'module_map_cache_key' => 'levenues_module_map',
+        //'module_map_cache_key' => 'levenues_module_map',
 
         // The path in which to cache merged configuration.
         'cache_dir' => 'data/config',
