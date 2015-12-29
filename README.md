@@ -6,7 +6,7 @@
 ## Decription
 
 'Company-web-service' allows create, update and delete company instances.
-Server sid of the application is running on zend framework 2, while client side is on Angular.js.
+Server side of the application is running on Zend Framework 2, while client side is on Angular.js.
 
 ## Installation 
 
@@ -23,5 +23,16 @@ composer install
 bower install
 ```
 
-Configure virtual host
+Configure your own virtual host using Apache or Nginx (or other server).
 
+To run main page of application:
+```
+ // <localhost> - localhost domain which you used for this app.
+ <localhost>/app/index.html#companies
+```
+
+Voila!
+
+## Lisence
+
+Code released under [the MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE).
