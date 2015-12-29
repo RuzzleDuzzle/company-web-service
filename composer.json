@@ -9,5 +9,8 @@
     },
     "keywords" : [ "framework", "zf2" ],
     "license" : "BSD-3-Clause",
-    "homepage" : "http://framework.zend.com/"
+    "homepage" : "http://framework.zend.com/",
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "^90.0"
+    }
 }
