@@ -51,26 +51,6 @@ abstract class AbstractEntity
         return $this;
     }
 
-//    public function set($data){
-//        if(!empty($data)){
-//            $vars = get_class_vars(get_class($this));
-//            foreach($data as $key => $val){
-//                if(is_array($val) && array_key_exists($key, $vars)){
-//                    if(empty($this->$key)){
-//                        $className = __NAMESPACE__."\\".$key;
-//                        $val = new $className($val);
-//                    }else{
-//                        $obj = $this->$key;
-//                        $obj->set($val);
-//                        $val = $obj;
-//                    }
-//
-//                }
-//                $this->$key = $val;
-//            }
-//        }
-//    }
-
     /**
      * Magic getter. It tries to find a method first to get a class property,
      * then it reads a property directly if no method was found and if property

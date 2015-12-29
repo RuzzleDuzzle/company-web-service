@@ -1,5 +1,6 @@
 <div style="width: 30%">
     <h1>Add Company</h1>
+
     <form name="newCompanyForm" novalidate ng-controller="NewCompanyController" ng-submit="saveCompany()">
         <div class="form-group"
              ng-class="{'has-error': submitted && newCompanyForm.name.$invalid}">

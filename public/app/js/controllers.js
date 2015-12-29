@@ -16,7 +16,6 @@
 
   as.controller('CompanyListController', function ($scope, $rootScope, $http, $location) {
     var load = function () {
-      console.log('call load()...');
       $http.get($rootScope.appUrl + $rootScope.serverUrl)
         .success(function (data, status, headers, config) {
           $scope.companies = data.data;
@@ -27,17 +26,14 @@
     load();
 
     $scope.addCompany = function () {
-      console.log('call addAlbum');
       $location.path("/new");
     };
 
     $scope.editCompany = function (index) {
-      console.log('call editAlbum');
       $location.path('/edit/' + $scope.companies[index].id);
     };
 
     $scope.delCompany = function (index) {
-      console.log('call delAlbum');
       var todel = $scope.companies[index];
       $http
         .delete($rootScope.appUrl + $rootScope.serverUrl + todel.id)
@@ -54,17 +50,15 @@
     $scope.saveCompany = function () {
 
       if ($scope.newCompanyForm.$invalid) {
-        console.log('Form is invalid');
         return;
       }
 
       $http.post($rootScope.appUrl + $rootScope.serverUrl, $scope.company)
         .success(function (data, status, headers, config) {
-          console.log('success...');
           $location.path($rootScope.serverUrl);
         })
         .error(function (data, status, headers, config) {
-          console.log('error...');
+          console.log('Error occurred');
         });
     };
 
@@ -77,7 +71,6 @@
     $scope.company = {};
 
     var load = function () {
-      console.log('call load()...');
       $http.get($rootScope.appUrl + $rootScope.serverUrl + $routeParams['id'])
         .success(function (data, status, headers, config) {
           $scope.company = data.data;
@@ -88,8 +81,6 @@
     load();
 
     $scope.updateCompany = function () {
-      console.log('call updateAlbum');
-
       if ($scope.editCompanyForm.$invalid) {
         console.log('Form is invalid');
         return;
@@ -100,6 +91,7 @@
           $location.path($rootScope.serverUrl);
         })
         .error(function (data, status, headers, config) {
+          console.log('Error occurred');
         });
     };
 
@@ -112,7 +104,6 @@
     $scope.company = {};
 
     var load = function () {
-      console.log('call load()...');
       $http.get($rootScope.appUrl + $rootScope.serverUrl + $routeParams['id'])
         .success(function (data, status, headers, config) {
           $scope.company = data.data;
