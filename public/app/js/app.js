@@ -17,7 +17,7 @@
     envServiceProvider.config({
       domains: {
         development: ['localhost'],
-        production: ['company-web-service.herokuapp.comm']
+        production: ['company-web-service.herokuapp.com']
       },
       vars: {
         development: {
