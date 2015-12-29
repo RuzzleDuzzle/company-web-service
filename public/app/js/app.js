@@ -17,14 +17,14 @@
     envServiceProvider.config({
       domains: {
         development: ['localhost'],
-        production: ['default-environment-5j4c7q5pw4.elasticbeanstalk.com']
+        production: ['company-web-service.herokuapp.comm']
       },
       vars: {
         development: {
           apiUrl: '//localhost'
         },
         production: {
-          apiUrl: '//default-environment-5j4c7q5pw4.elasticbeanstalk.com'
+          apiUrl: '//company-web-service.herokuapp.com'
         }
       }
     });

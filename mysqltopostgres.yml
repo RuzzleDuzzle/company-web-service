@@ -1,0 +1,15 @@
+mysql:
+ hostname: localhost
+ port: 3306
+ socket: /tmp/mysql.sock
+ username: root
+ password:
+ database: company_web_service
+
+destination:
+ postgres:
+  hostname: localhost
+  port: 5432
+  username: you
+  password: password
+  database: pg-db
