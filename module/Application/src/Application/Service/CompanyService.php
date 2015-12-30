@@ -49,7 +49,7 @@ class CompanyService
         $company = new Company($data);
         $owner->setCompany($company);
         $company->setOwner($owner);
-        $em->persist($company);
+        //$em->persist($company);
         $em->flush();
         return $company;
     }
