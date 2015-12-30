@@ -30,11 +30,11 @@ return array(
             'orm_default' => array(
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
                 'params' => array(
-                    'host' => 'ec2-54-83-43-118.compute-1.amazonaws.com',
+                    'host' => 'ec2-54-217-240-205.eu-west-1.compute.amazonaws.com',
                     'port' => 5432,
-                    'user' => 'yxrmjwoizhlkcc',
-                    'password' => 'WdvvTCUYOUWvoTMOiq_D47F3tP',
-                    'dbname' => 'dbfuntfj33fnp6',
+                    'user' => 'zgujozzcnhpfih',
+                    'password' => 'd4_zB-WeE1yidbMHZkxBWBDBPR',
+                    'dbname' => 'd7af6e60f3st00',
                     'charset' => 'UTF8',
                     'driverOptions' => array(
                         'charset' => 'UTF8'
