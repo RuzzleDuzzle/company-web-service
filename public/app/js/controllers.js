@@ -1,5 +1,5 @@
 (function () {
-  var as = angular.module('myApp.controllers', ['angular-confirm']);
+  var as = angular.module('myApp.controllers', []);
   as.controller('AppController', function ($scope, envService, $rootScope, $http, $location) {
     $scope.activeWhen = function (value) {
       return value ? 'active' : '';
@@ -14,7 +14,7 @@
 
   });
 
-  as.controller('CompanyListController', function ($scope, $rootScope, $http, $location, $confirm) {
+  as.controller('CompanyListController', function ($scope, $rootScope, $http, $location) {
     var load = function () {
       $http.get($rootScope.appUrl + $rootScope.serverUrl)
         .success(function (data, status, headers, config) {
@@ -35,15 +35,15 @@
 
     $scope.delCompany = function (index) {
       var todel = $scope.companies[index];
-      $confirm({text: 'Are you sure you want to delete company?'})
-        .then(function() {
-          $http
-            .delete($rootScope.appUrl + $rootScope.serverUrl + todel.id)
-            .success(function (data, status, headers, config) {
-              load();
-            }).error(function (data, status, headers, config) {
-          });
+
+      if (window.confirm("Are you sure that you want to delete company?")) {
+        $http
+          .delete($rootScope.appUrl + $rootScope.serverUrl + todel.id)
+          .success(function (data, status, headers, config) {
+            load();
+          }).error(function (data, status, headers, config) {
         });
+      }
     };
 
   });
