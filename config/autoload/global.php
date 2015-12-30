@@ -1,5 +1,12 @@
 <?php
 
+$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
 return array(
     'service_manager' => array(
         'aliases' => array(
@@ -30,11 +37,11 @@ return array(
             'orm_default' => array(
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
                 'params' => array(
-                    'host' => 'ec2-54-217-240-205.eu-west-1.compute.amazonaws.com',
-                    'port' => 5432,
-                    'user' => 'zgujozzcnhpfih',
-                    'password' => 'd4_zB-WeE1yidbMHZkxBWBDBPR',
-                    'dbname' => 'd7af6e60f3st00',
+                    'host' => $server,
+                    'port' => 3306,
+                    'user' => $username,
+                    'password' => $password,
+                    'dbname' => $db,
                     'charset' => 'UTF8',
                     'driverOptions' => array(
                         'charset' => 'UTF8'
