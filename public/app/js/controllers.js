@@ -1,5 +1,5 @@
 (function () {
-  var as = angular.module('myApp.controllers', ['ngDialog']);
+  var as = angular.module('myApp.controllers', []);
   as.controller('AppController', function ($scope, envService, $rootScope, $http, $location) {
     $scope.activeWhen = function (value) {
       return value ? 'active' : '';
