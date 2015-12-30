@@ -1,5 +1,5 @@
 (function () {
-  var as = angular.module('myApp.controllers', []);
+  var as = angular.module('myApp.controllers', ['ngDialog']);
   as.controller('AppController', function ($scope, envService, $rootScope, $http, $location) {
     $scope.activeWhen = function (value) {
       return value ? 'active' : '';
@@ -14,7 +14,7 @@
 
   });
 
-  as.controller('CompanyListController', function ($scope, $rootScope, $http, $location) {
+  as.controller('CompanyListController', function ($scope, $rootScope, $http, $location, ngDialog) {
     var load = function () {
       $http.get($rootScope.appUrl + $rootScope.serverUrl)
         .success(function (data, status, headers, config) {
