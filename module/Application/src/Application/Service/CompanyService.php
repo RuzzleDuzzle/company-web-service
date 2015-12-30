@@ -19,12 +19,8 @@ class CompanyService
 
     public function fetchAll()
     {
-        //TODO: return to normal
-        $query= $this->em->createQuery('select c, o from companies c left join c.owner o order by c.id');
+        $query= $this->em->createQuery('select c, o from Application\Entity\Company c left join c.owner o order by c.id');
         $results = $query->getArrayResult();
-//        $companyRepository = $this->em->getRepository('Application\Entity\Company');
-//        $companyList = $companyRepository->findAll();
-
         return $results;
     }
 
