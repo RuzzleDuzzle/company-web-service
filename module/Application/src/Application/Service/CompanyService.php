@@ -19,6 +19,7 @@ class CompanyService
 
     public function fetchAll()
     {
+        //TODO: return to normal
         $query= $this->em->createQuery('select c, o from Application\Entity\Company c left join c.owner o order by c.id');
         $results = $query->getArrayResult();
         return $results;

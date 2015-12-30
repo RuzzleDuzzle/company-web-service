@@ -1,6 +1,6 @@
 <?php
 
-$env = getenv('APPLICATION_ENV') ?: 'production';
+$env = 'production';
 
 $modules = array(
     'Application',
