@@ -21,11 +21,11 @@ class CompanyService
     {
         //TODO: return to normal
         $query = $this->em->createQuery('select c from companies c');
-        $results = $query->getArrayResult();
+        //$results = $query->getArrayResult();
         //$companyRepository = $this->em->getRepository('Application\Entity\Company');
         //$companyList = $companyRepository->findAll();
 
-        return $results;
+        return $query;
     }
 
     public function getCompany($id)
