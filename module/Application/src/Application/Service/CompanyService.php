@@ -20,16 +20,12 @@ class CompanyService
     public function fetchAll()
     {
         //TODO: return to normal
-//        $query= $this->em->createQuery('select c, o from Application\Entity\Company c left join c.owner o order by c.id');
-//        $results = $query->getArrayResult();
-        try {
-        $companyRepository = $this->em->getRepository('Application\Entity\Company');
-        $companyList = $companyRepository->findAll();
-        } catch (\Exception $e) {
-            var_dump($e);
-        }
+        $query = $this->em->createQuery('select c from companies c');
+        $results = $query->getArrayResult();
+        //$companyRepository = $this->em->getRepository('Application\Entity\Company');
+        //$companyList = $companyRepository->findAll();
 
-        return $companyList;
+        return $results;
     }
 
     public function getCompany($id)
