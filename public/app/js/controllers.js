@@ -14,7 +14,7 @@
 
   });
 
-  as.controller('CompanyListController', function ($scope, $rootScope, $http, $location, ngDialog) {
+  as.controller('CompanyListController', function ($scope, $rootScope, $http, $location) {
     var load = function () {
       $http.get($rootScope.appUrl + $rootScope.serverUrl)
         .success(function (data, status, headers, config) {
