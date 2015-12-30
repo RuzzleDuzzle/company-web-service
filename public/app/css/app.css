@@ -29,6 +29,6 @@
   padding: 0;
 }
 
-a.glyphicon:hover {
+.company-action:hover {
   cursor: pointer;
 }

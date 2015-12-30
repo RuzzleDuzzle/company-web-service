@@ -39,7 +39,8 @@
             <span class="help-block"
                   ng-show="submitted && editCompanyForm.email.$error.email">Enter valid e-mail address</span>
         </div>
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{'has-error': submitted && editCompanyForm.phone.$invalid}">
             <input id="phone" name="phone" type="text" class="form-control"
                    placeholder="Phone number" pattern="^[0-9][0-9-]+" ng-model="company.phone">
             <span class="help-block"
